@@ -1,0 +1,86 @@
+{
+    "pagina12": {
+        "name": "Página 12",
+        "urls": [
+            "https://www.pagina12.com.ar/rss/portada",
+            "https://www.pagina12.com.ar/rss/secciones/economia/notas",
+            "https://www.pagina12.com.ar/rss/secciones/ciencia/notas",
+            "https://www.pagina12.com.ar/rss/secciones/el-pais/notas"
+        ],
+        "structure": {
+            "subtitle": "description",
+            "image": "media:content"
+        }
+    },
+    "clarin": {
+        "name": "Clarín",
+        "urls": [
+            "https://www.clarin.com/rss/lo-ultimo/",
+            "https://www.clarin.com/rss/politica/",
+            "https://www.clarin.com/rss/opinion/",
+            "https://www.clarin.com/rss/economia/"
+        ],
+        "structure": {
+            "subtitle": "description",
+            "image": "enclosure"
+        }
+    },
+    "lanacion": {
+        "name": "La Nación",
+        "urls": "https://www.lanacion.com.ar/arc/outboundfeeds/rss/"
+    },
+    "infobae": {
+        "name": "Infobae",
+        "urls": [
+            "https://www.infobae.com/feeds/rss/"
+        ]
+    },
+    "ambitofinanciero": {
+        "name": "Ámbito Financiero",
+        "urls": [
+            "https://www.ambito.com/rss/pages/home.xml",
+            "https://www.ambito.com/rss/pages/economia.xml",
+            "https://www.ambito.com/rss/pages/nacional.xml",
+            "https://www.ambito.com/rss/pages/politica.xml",
+            "https://www.ambito.com/rss/pages/novedades-fiscales.xml"
+        ]
+    },
+    "perfil": {
+        "name": "Perfil",
+        "urls": [
+            "https://www.perfil.com/feed",
+            "https://www.perfil.com/feed/politica",
+            "https://www.perfil.com/feed/economia",
+            "https://www.perfil.com/feed/opinion"
+        ]
+    },
+    "lapoliticaonline": {
+        "name": "La Política Online",
+        "urls": [
+            "https://www.lapoliticaonline.com/files/rss/politica.xml",
+            "https://www.lapoliticaonline.com/files/rss/economia.xml",
+            "https://www.lapoliticaonline.com/files/rss/ciudad.xml"
+        ]
+    },
+    "laizquierdadiario": {
+        "name": "La Izquierda Diario",
+        "urls": [
+            "https://www.laizquierdadiario.com/spip.php?page=backend_portada",
+            "https://www.laizquierdadiario.com/spip.php?page=backend&id_mot=12",
+            "https://www.laizquierdadiario.com/spip.php?page=backend&id_mot=13",
+            "https://www.laizquierdadiario.com/spip.php?page=backend&id_mot=14"
+        ]
+    },
+    "eldiarioar": {
+        "name": "El DiarioAR",
+        "urls": [
+            "https://www.eldiarioar.com/rss/"
+        ]
+    },
+    "elpais": {
+        "name": "El País",
+        "urls": [
+            "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/argentina/portada"
+        ]
+    }
+}
