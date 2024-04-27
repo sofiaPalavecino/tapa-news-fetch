@@ -14,6 +14,18 @@ class Standarizer {
       this.months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio','agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
     }
 
+    formatDate(newItem){
+      var date = new Date(newItem['date']);
+      var day = date.getDate();
+      var month = date.getMonth();
+      var year = date.getFullYear();
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      var formattedTime = hours + ':' + minutes;
+      newItem['date'] = day + ' de ' + this.months[month] + ' de ' + year + ' ' + formattedTime
+    }
+
     setItemBasicInfo(item, newItem){
       newItem['title'] = item[this.structure['title']][0];
       newItem['link'] = item[this.structure['link']][0];

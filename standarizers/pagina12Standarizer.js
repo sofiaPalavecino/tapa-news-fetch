@@ -6,19 +6,6 @@ class Pagina12Standarizer extends Standarizer{
         super(pageName);
     }
 
-    formatDate(newItem){
-        var date = new Date(newItem['date']);
-        var day = date.getDate();
-        var month = date.getMonth();
-        var year = date.getFullYear();
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        var formattedTime = hours + ':' + minutes;
-        newItem['date'] = day + ' de ' + this.months[month] + ' de ' + year + ' ' + formattedTime
-        return newItem;
-    }
-
     getSubtitle(item, newItem){
         if (item.hasOwnProperty(this.structure['subtitle'])){
             let subtitle = item[this.structure['subtitle']][0].substring(3);
