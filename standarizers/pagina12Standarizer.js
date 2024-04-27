@@ -11,7 +11,6 @@ class Pagina12Standarizer extends Standarizer{
             let subtitle = item[this.structure['subtitle']][0].substring(3);
             newItem['subtitle'] = subtitle;
         }
-        return newItem;
     }
 
     getImage(item, newItem){
@@ -19,7 +18,6 @@ class Pagina12Standarizer extends Standarizer{
             let image = item[this.structure['image']][0]['$']['url'];
             newItem['image'] = image;
         }
-        return newItem;
     }
 
     async getNormalizedInfo(){
@@ -27,10 +25,10 @@ class Pagina12Standarizer extends Standarizer{
         let normalizedItems = [];
         for (const item of pageItems){
             let newItem = {};
-            newItem = this.setItemBasicInfo(item, newItem)
-            newItem = this.getSubtitle(item, newItem);
-            newItem = this.getImage(item, newItem);
-            newItem = this.formatDate(newItem)
+            this.setItemBasicInfo(item, newItem)
+            this.getSubtitle(item, newItem);
+            this.getImage(item, newItem);
+            this.formatDate(newItem)
             normalizedItems.push(newItem);
         }
         console.log(normalizedItems)

@@ -30,7 +30,6 @@ class Standarizer {
       newItem['title'] = item[this.structure['title']][0];
       newItem['link'] = item[this.structure['link']][0];
       newItem['date'] = item[this.structure['date']][0];
-      return newItem;
     }
 
     async fetchPageData(xmlURL){

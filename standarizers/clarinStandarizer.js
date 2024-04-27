@@ -28,10 +28,10 @@ class ClarinStandarizer extends Standarizer{
         let normalizedItems = [];
         for (const item of pageItems){
             let newItem = {};
-            newItem = this.setItemBasicInfo(item, newItem)
-            newItem = this.getDescription(item, newItem)
-            newItem = this.getImage(item, newItem)
-            newItem = this.formatDate(newItem)
+            this.setItemBasicInfo(item, newItem)
+            this.getDescription(item, newItem)
+            this.getImage(item, newItem)
+            this.formatDate(newItem)
             normalizedItems.push(newItem); 
         }
         console.log(normalizedItems);
