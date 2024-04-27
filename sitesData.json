@@ -15,7 +15,6 @@
     "clarin": {
         "name": "Clarín",
         "urls": [
-            "https://www.clarin.com/rss/lo-ultimo/",
             "https://www.clarin.com/rss/politica/",
             "https://www.clarin.com/rss/opinion/",
             "https://www.clarin.com/rss/economia/"
