@@ -11,7 +11,6 @@ class ClarinStandarizer extends Standarizer{
             let image = item[this.structure['image']][0]['$']['url']
             newItem['image'] = image;
         }
-        return newItem;
     }
 
     getDescription(item, newItem){
@@ -20,7 +19,6 @@ class ClarinStandarizer extends Standarizer{
             subtitle = subtitle.match(/^([^\.!?]+[\.!?])/)[0].replace(/^\s+/, '');
             newItem['subtitle'] = subtitle;
         }
-        return newItem;
     }
 
     async getNormalizedInfo(){
