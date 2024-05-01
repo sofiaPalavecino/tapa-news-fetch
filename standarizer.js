@@ -14,6 +14,28 @@ class Standarizer {
       this.months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio','agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
     }
 
+    async getNormalizedInfo(){
+      const pageItems = await this.getPagesItems();
+      let normalizedItems = [];
+      for (const item of pageItems){
+        let newItem = {};
+        this.setItemBasicInfo(item, newItem)
+        this.processCustomStandarization(item, newItem)
+        normalizedItems.push(newItem);
+      }
+      console.log(normalizedItems)
+      return normalizedItems;
+    }
+
+    processCustomStandarization(item, newItem){}
+
+    setItemBasicInfo(item, newItem){
+      newItem['title'] = item[this.structure['title']][0];
+      newItem['link'] = item[this.structure['link']][0];
+      newItem['date'] = item[this.structure['date']][0];
+      this.formatDate(newItem)
+    }
+
     formatDate(newItem){
       var date = new Date(newItem['date']);
       var day = date.getDate();
@@ -24,12 +46,6 @@ class Standarizer {
       minutes = minutes < 10 ? '0' + minutes : minutes;
       var formattedTime = hours + ':' + minutes;
       newItem['date'] = day + ' de ' + this.months[month] + ' de ' + year + ' ' + formattedTime
-    }
-
-    setItemBasicInfo(item, newItem){
-      newItem['title'] = item[this.structure['title']][0];
-      newItem['link'] = item[this.structure['link']][0];
-      newItem['date'] = item[this.structure['date']][0];
     }
 
     async fetchPageData(xmlURL){

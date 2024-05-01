@@ -20,19 +20,9 @@ class Pagina12Standarizer extends Standarizer{
         }
     }
 
-    async getNormalizedInfo(){
-        const pageItems = await this.getPagesItems();
-        let normalizedItems = [];
-        for (const item of pageItems){
-            let newItem = {};
-            this.setItemBasicInfo(item, newItem)
-            this.getSubtitle(item, newItem);
-            this.getImage(item, newItem);
-            this.formatDate(newItem)
-            normalizedItems.push(newItem);
-        }
-        console.log(normalizedItems)
-        return normalizedItems;
+    processCustomStandarization(item, newItem){
+        this.getSubtitle(item, newItem);
+        this.getImage(item, newItem);
     }
 }
 

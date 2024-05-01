@@ -16,23 +16,15 @@ class ClarinStandarizer extends Standarizer{
     getDescription(item, newItem){
         if (item.hasOwnProperty(this.structure['subtitle'])){
             let subtitle = item[this.structure['subtitle']][0].replace(/<\/?p>|<\/?ul>|<\/?li>/g, '');
-            subtitle = subtitle.match(/^([^\.!?]+[\.!?])/)[0].replace(/^\s+/, '');
+            let subtitleSentences = subtitle.match(/^([^\.!?]+[\.!?])/)
+            subtitle = subtitleSentences == null ? subtitle : subtitleSentences[0].replace(/^\s+/, '')
             newItem['subtitle'] = subtitle;
         }
     }
 
-    async getNormalizedInfo(){
-        const pageItems = await this.getPagesItems();
-        let normalizedItems = [];
-        for (const item of pageItems){
-            let newItem = {};
-            this.setItemBasicInfo(item, newItem)
-            this.getDescription(item, newItem)
-            this.getImage(item, newItem)
-            this.formatDate(newItem)
-            normalizedItems.push(newItem); 
-        }
-        console.log(normalizedItems);
+    processCustomStandarization(item, newItem){
+        this.getDescription(item, newItem)
+        this.getImage(item, newItem)
     }
 }
 
