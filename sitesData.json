@@ -26,7 +26,13 @@
     },
     "lanacion": {
         "name": "La Nación",
-        "urls": "https://www.lanacion.com.ar/arc/outboundfeeds/rss/"
+        "urls": [
+            "https://www.lanacion.com.ar/arc/outboundfeeds/rss/"
+        ],
+        "structure": {
+            "subtitle": "description",
+            "image": "media:content"
+        }
     },
     "infobae": {
         "name": "Infobae",
