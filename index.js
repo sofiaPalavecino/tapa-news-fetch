@@ -1,8 +1,7 @@
-const pagesData = require(`${__dirname}/sitesData.json`);
-
 const standarizers = [
-    `${__dirname}/standarizers/pagina12Standarizer.js`,
-    //`${__dirname}/standarizers/clarinStandarizer.js`
+    //`${__dirname}/standarizers/pagina12Standarizer.js`,
+    //`${__dirname}/standarizers/clarinStandarizer.js`,
+    `${__dirname}/standarizers/laNacionStandarizer.js`
 ];
 let data = []
 
