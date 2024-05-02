@@ -28,6 +28,8 @@ class Standarizer {
       return normalizedItems;
     }
 
+    preProcessItems(pageItems){}
+
     processCustomStandarization(item, newItem){}
 
     setItemBasicInfo(item, newItem){
