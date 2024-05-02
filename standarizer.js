@@ -56,7 +56,7 @@ class Standarizer {
         const page = await getXMLObject(xmlURL);
         return await page;
       } catch (error) {
-          console.error("Error getting page content:", error);
+        console.error("Error getting page content:", error);
       }
     }
   
