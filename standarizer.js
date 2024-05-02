@@ -40,14 +40,14 @@ class Standarizer {
     }
 
     formatDate(newItem){
-      var date = new Date(newItem['date']);
-      var day = date.getDate();
-      var month = date.getMonth();
-      var year = date.getFullYear();
-      var hours = date.getHours();
-      var minutes = date.getMinutes();
+      let date = new Date(newItem['date']);
+      let day = date.getDate();
+      let month = date.getMonth();
+      let year = date.getFullYear();
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
       minutes = minutes < 10 ? '0' + minutes : minutes;
-      var formattedTime = hours + ':' + minutes;
+      let formattedTime = hours + ':' + minutes;
       newItem['date'] = day + ' de ' + this.months[month] + ' de ' + year + ' ' + formattedTime
     }
 
