@@ -37,7 +37,7 @@ class Standarizer {
     processCustomStandarization(item, newItem){}
 
     setItemBasicInfo(item, newItem){
-      newItem['title'] = item[this.structure['title']][0];
+      newItem['title'] = item[this.structure['title']][0].trim();
       newItem['link'] = item[this.structure['link']][0];
       newItem['date'] = item[this.structure['date']][0];
       this.formatDate(newItem)
