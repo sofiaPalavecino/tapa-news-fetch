@@ -37,10 +37,17 @@ class Standarizer {
 
     setItemBasicInfo(item, newItem){
       newItem['title'] = item[this.structure['title']][0].trim();
+			newItem['id'] = this.generatePostId(newItem['title']);
       newItem['link'] = item[this.structure['link']][0];
       newItem['date'] = item[this.structure['date']][0];
       this.formatDate(newItem)
     }
+
+		generatePostId(title) {
+			const hash = crypto.createHash('sha256');
+			hash.update(title);
+			return hash.digest('hex');
+		}
 
     formatDate(newItem){
       let date = new Date(newItem['date']);
