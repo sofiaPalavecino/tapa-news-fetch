@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const getXMLObject = require('./xmlProcessor.js');
 const pagesData = require(`${__dirname}/sitesData.json`);
 
