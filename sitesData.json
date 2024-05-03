@@ -38,7 +38,11 @@
         "name": "Infobae",
         "urls": [
             "https://www.infobae.com/feeds/rss/"
-        ]
+        ],
+        "structure": {
+            "subtitle": "description",
+            "image": "content:encoded"
+        }
     },
     "ambitofinanciero": {
         "name": "Ámbito Financiero",
@@ -48,7 +52,10 @@
             "https://www.ambito.com/rss/pages/nacional.xml",
             "https://www.ambito.com/rss/pages/politica.xml",
             "https://www.ambito.com/rss/pages/novedades-fiscales.xml"
-        ]
+        ],
+        "structure": {
+            "subtitle": "description"
+        }
     },
     "perfil": {
         "name": "Perfil",
@@ -57,7 +64,11 @@
             "https://www.perfil.com/feed/politica",
             "https://www.perfil.com/feed/economia",
             "https://www.perfil.com/feed/opinion"
-        ]
+        ],
+        "structure": {
+            "subtitle": "description",
+            "image": "media:content"
+        }
     },
     "lapoliticaonline": {
         "name": "La Política Online",
@@ -65,27 +76,42 @@
             "https://www.lapoliticaonline.com/files/rss/politica.xml",
             "https://www.lapoliticaonline.com/files/rss/economia.xml",
             "https://www.lapoliticaonline.com/files/rss/ciudad.xml"
-        ]
+        ],
+        "structure": {
+            "subtitle": "description",
+            "image": "enclosure"
+        }
     },
     "laizquierdadiario": {
         "name": "La Izquierda Diario",
         "urls": [
             "https://www.laizquierdadiario.com/spip.php?page=backend_portada",
             "https://www.laizquierdadiario.com/spip.php?page=backend&id_mot=12",
-            "https://www.laizquierdadiario.com/spip.php?page=backend&id_mot=13",
-            "https://www.laizquierdadiario.com/spip.php?page=backend&id_mot=14"
-        ]
+            "https://www.laizquierdadiario.com/spip.php?page=backend&id_mot=13"
+        ],
+        "structure": {
+            "date": "dc:date",
+            "subtitle": "description",
+            "image": "content:encoded"
+        }
     },
     "eldiarioar": {
         "name": "El DiarioAR",
         "urls": [
             "https://www.eldiarioar.com/rss/"
-        ]
+        ],
+        "structure": {
+            "image": "media:content"
+        }
     },
     "elpais": {
         "name": "El País",
         "urls": [
             "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/argentina/portada"
-        ]
+        ],
+        "structure": {
+            "subtitle": "media:content",
+            "image": "media:content"
+        }
     }
 }
