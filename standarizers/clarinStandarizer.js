@@ -16,7 +16,7 @@ class ClarinStandarizer extends Standarizer{
     getDescription(item, newItem){
         if (item.hasOwnProperty(this.structure['subtitle'])){
             let subtitle = item[this.structure['subtitle']][0].replace(/<\/?p>|<\/?ul>|<\/?li>/g, '');
-            let subtitleSentences = subtitle.match(/^([^\.!?]+[\.!?])/)
+            let subtitleSentences = this.getFirstSentenceArray(subtitle)
             subtitle = subtitleSentences == null ? subtitle : subtitleSentences[0].replace(/^\s+/, '')
             newItem['subtitle'] = subtitle;
         }
