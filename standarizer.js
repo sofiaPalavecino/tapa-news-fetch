@@ -32,7 +32,7 @@ class Standarizer {
       return normalizedItems;
     }
 
-    preProcessItems(pageItems){}
+    preProcessItems(pageItems){ return pageItems }
 
     processCustomStandarization(item, newItem){}
 
