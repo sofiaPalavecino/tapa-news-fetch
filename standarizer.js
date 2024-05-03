@@ -25,6 +25,7 @@ class Standarizer {
           this.processCustomStandarization(item, newItem)
           normalizedItems.push(newItem);
         }
+				normalizedItems = this.removeDuplicates(normalizedItems)
       } catch(error){
         console.log(error)
       }
@@ -60,6 +61,14 @@ class Standarizer {
     getFirstSentenceArray(sentence){
       return sentence.match(/^.*?[\.!?](?:\s|$)/);
     }
+
+		removeDuplicates(normalizedItems){
+			const mapFromItems = new Map(
+				normalizedItems.map(item => [item.id, item])
+			);
+			const uniqueItems = [...mapFromItems.values()];
+			return uniqueItems
+		}
 
     async fetchPageData(xmlURL){
       try {
