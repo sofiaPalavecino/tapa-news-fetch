@@ -45,14 +45,14 @@ class Standarizer {
 
     formatDate(newItem){
       let date = new Date(newItem['date']);
-      let day = date.getDate();
-      let month = date.getMonth();
-      let year = date.getFullYear();
-      let hours = date.getHours();
       let minutes = date.getMinutes();
       minutes = minutes < 10 ? '0' + minutes : minutes;
-      let formattedTime = hours + ':' + minutes;
-      newItem['date'] = day + ' de ' + this.months[month] + ' de ' + year + ' ' + formattedTime
+      let formattedTime = date.getHours() + ':' + minutes;
+      newItem['date'] = date.getDate() + ' de ' + this.months[date.getMonth()] + ' de ' + date.getFullYear() + ' ' + formattedTime
+    }
+
+    getFirstSentenceArray(sentence){
+      return sentence.match(/^.*?[\.!?](?:\s|$)/);
     }
 
     async fetchPageData(xmlURL){
