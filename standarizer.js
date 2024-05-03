@@ -17,8 +17,7 @@ class Standarizer {
     async getNormalizedInfo(){
       let normalizedItems = [];
       try{
-      let pageItems = await this.getPagesItems();
-      let normalizedItems = [];
+        let pageItems = await this.getPagesItems();
         pageItems = this.preProcessItems(pageItems)
         for (const item of pageItems){
           let newItem = {};
