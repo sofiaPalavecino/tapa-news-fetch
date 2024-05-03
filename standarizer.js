@@ -15,16 +15,20 @@ class Standarizer {
     }
 
     async getNormalizedInfo(){
+      let normalizedItems = [];
+      try{
       let pageItems = await this.getPagesItems();
       let normalizedItems = [];
-      pageItems = this.preProcessItems(pageItems)
-      for (const item of pageItems){
-        let newItem = {};
-        this.setItemBasicInfo(item, newItem)
-        this.processCustomStandarization(item, newItem)
-        normalizedItems.push(newItem);
+        pageItems = this.preProcessItems(pageItems)
+        for (const item of pageItems){
+          let newItem = {};
+          this.setItemBasicInfo(item, newItem)
+          this.processCustomStandarization(item, newItem)
+          normalizedItems.push(newItem);
+        }
+      } catch(error){
+        console.log(error)
       }
-      console.log(normalizedItems)
       return normalizedItems;
     }
 
