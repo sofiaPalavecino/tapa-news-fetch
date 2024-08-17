@@ -43,16 +43,17 @@ class Standarizer {
 
     setItemBasicInfo(item, newItem){
       newItem['title'] = item[this.structure['title']][0].trim();
-			newItem['id'] = this.generatePostId(newItem['title']);
       newItem['link'] = item[this.structure['link']][0];
+			newItem['id'] = this.generatePostId(newItem['link']);
       newItem['date'] = item[this.structure['date']][0];
       newItem['site'] = this.pageName;
       this.formatDate(newItem)
     }
 
-		generatePostId(title) {
+		generatePostId(link) {
 			const hash = crypto.createHash('sha256');
-			hash.update(title);
+      const linkSplit = link.split('/');
+			hash.update(linkSplit[linkSplit.length - 1]);
 			return hash.digest('hex');
 		}
 
@@ -61,7 +62,7 @@ class Standarizer {
       let minutes = date.getMinutes();
       minutes = minutes < 10 ? '0' + minutes : minutes;
       let formattedTime = date.getHours() + ':' + minutes;
-      newItem['date'] = date.getDate() + ' de ' + this.months[date.getMonth()] + ' de ' + date.getFullYear() + ' ' + formattedTime
+      newItem['date_name'] = date.getDate() + ' de ' + this.months[date.getMonth()] + ' de ' + date.getFullYear() + ' ' + formattedTime
     }
 
     getFirstSentenceArray(sentence){
