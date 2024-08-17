@@ -23,26 +23,22 @@ const standarizers = [
     ElPaisStandarizer,
 ];
 
-let data = []
+getData();
 
 async function getData(){
+    //var data = [];
     standarizers.forEach(async element => {
-        //const Standarizer = require(element);
         const e = new element();
-        const info = await e.getNormalizedInfo()
+        let info =  await e.getNormalizedInfo()
+        //testUpload(info)
         //data = [].concat(...await e.getNormalizedInfo());
-        //console.log(data)
-
-        console.log(info)
     });
 }
 
-async function testUpload(){
+async function testUpload(info){
     await initializeFirebaseApp()
-    await uploadProcessedData()
-    console.log("funca");
+    for (let i = 0; i < 50; i++) {
+        const element = info[i]; 
+        await uploadProcessedData(element)
+    }
 }
-
-getData()
-
-//testUpload()
