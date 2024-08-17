@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
-const parseString = require('xml2js').parseString;
+import fetch from 'node-fetch';
+import { parseString } from 'xml2js';
 
 // Function to fetch XML data from a URL
 async function fetchXML(url) {
@@ -27,4 +27,4 @@ async function getXMLObject(xmlURL) {
 
 }
 
-module.exports = getXMLObject;
+export default getXMLObject;
