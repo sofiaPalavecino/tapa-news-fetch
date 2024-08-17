@@ -132,3 +132,6 @@ dist
 *.html
 *.out
 .env
+service_accounts/
+package-lock.json
+*.txt
