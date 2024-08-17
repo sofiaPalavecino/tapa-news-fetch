@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class AmbitoFinancieroStandarizer extends Standarizer{
     constructor(){
@@ -18,4 +18,4 @@ class AmbitoFinancieroStandarizer extends Standarizer{
     }
 }
 
-module.exports = AmbitoFinancieroStandarizer;
+export default AmbitoFinancieroStandarizer;

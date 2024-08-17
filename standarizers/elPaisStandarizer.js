@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class ElPaisStandarizer extends Standarizer{
     constructor(){
@@ -41,4 +41,4 @@ class ElPaisStandarizer extends Standarizer{
     }
 }
 
-module.exports = ElPaisStandarizer
+export default ElPaisStandarizer

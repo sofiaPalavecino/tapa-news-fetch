@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class Pagina12Standarizer extends Standarizer{
     constructor(){
@@ -26,4 +26,4 @@ class Pagina12Standarizer extends Standarizer{
     }
 }
 
-module.exports = Pagina12Standarizer;
+export default Pagina12Standarizer;

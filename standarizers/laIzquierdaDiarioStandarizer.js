@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class LaIzquierdaDiarioStandarizer extends Standarizer{
     constructor(){
@@ -31,4 +31,4 @@ class LaIzquierdaDiarioStandarizer extends Standarizer{
     }
 }
 
-module.exports = LaIzquierdaDiarioStandarizer;
+export default LaIzquierdaDiarioStandarizer;

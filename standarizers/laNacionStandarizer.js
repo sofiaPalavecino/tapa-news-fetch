@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class LaNacionStandarizer extends Standarizer{
     constructor(){
@@ -39,4 +39,4 @@ class LaNacionStandarizer extends Standarizer{
     }
 }
 
-module.exports = LaNacionStandarizer;
+export default LaNacionStandarizer;

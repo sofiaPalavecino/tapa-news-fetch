@@ -1,6 +1,9 @@
-const crypto = require('crypto');
-const getXMLObject = require('./xmlProcessor.js');
-const pagesData = require(`${__dirname}/sitesData.json`);
+import crypto from "crypto";
+//const crypto = require('crypto');
+import getXMLObject from "./xmlProcessor.js";
+//const getXMLObject = require('./xmlProcessor.js');
+import pagesData from "./sitesData.json" assert { type: "json" };
+//const pagesData = require(`${__dirname}/sitesData.json`);
 
 class Standarizer {
     constructor(pageName) {
@@ -9,7 +12,8 @@ class Standarizer {
         "link": "link",
         "date": "pubDate"
       };
-      const pageInfo = pagesData[pageName]
+      const pageInfo = pagesData[pageName];
+      this.pageName = pageName;
       this.structure = Object.assign({}, this.structure, pageInfo.structure);
       this.pageUrls = pageInfo.urls;
       this.months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio','agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
@@ -42,6 +46,7 @@ class Standarizer {
 			newItem['id'] = this.generatePostId(newItem['title']);
       newItem['link'] = item[this.structure['link']][0];
       newItem['date'] = item[this.structure['date']][0];
+      newItem['site'] = this.pageName;
       this.formatDate(newItem)
     }
 
@@ -97,4 +102,4 @@ class Standarizer {
     }
   }
   
-module.exports = Standarizer;
+export default Standarizer;

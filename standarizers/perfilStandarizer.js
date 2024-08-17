@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class PerfilStandarizer extends Standarizer{
     constructor(){
@@ -27,4 +27,4 @@ class PerfilStandarizer extends Standarizer{
     }
 }
 
-module.exports = PerfilStandarizer;
+export default PerfilStandarizer;

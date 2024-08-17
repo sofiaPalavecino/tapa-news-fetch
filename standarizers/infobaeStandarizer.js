@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class InfobaeStandarizer extends Standarizer{
     constructor(){
@@ -42,4 +42,4 @@ class InfobaeStandarizer extends Standarizer{
     }
 }
 
-module.exports = InfobaeStandarizer;
+export default InfobaeStandarizer;

@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class LaPoliticaOnlineStandarizer extends Standarizer{
     constructor(){
@@ -26,4 +26,4 @@ class LaPoliticaOnlineStandarizer extends Standarizer{
     }
 }
 
-module.exports = LaPoliticaOnlineStandarizer;
+export default LaPoliticaOnlineStandarizer;

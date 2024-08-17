@@ -1,4 +1,4 @@
-const Standarizer = require("../standarizer");
+import Standarizer from "../standarizer.js";
 
 class ClarinStandarizer extends Standarizer{
     constructor(){
@@ -28,4 +28,4 @@ class ClarinStandarizer extends Standarizer{
     }
 }
 
-module.exports = ClarinStandarizer;
+export default ClarinStandarizer;
