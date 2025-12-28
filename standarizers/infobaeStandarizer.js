@@ -29,7 +29,7 @@ class InfobaeStandarizer extends Standarizer{
     getImage(item, newItem){
         if (item.hasOwnProperty(this.structure['image'])) {
             let image = item[this.structure['image']][0]
-            const startIndex = image.indexOf("https://www.infobae.com/new-resizer/");
+            const startIndex = image.indexOf("https://www.infobae.com/resizer/");
             const endIndex = image.indexOf('"', startIndex);
             image = image.substring(startIndex, endIndex);
             newItem['image'] = image;

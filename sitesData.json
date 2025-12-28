@@ -37,7 +37,7 @@
     "infobae": {
         "name": "Infobae",
         "urls": [
-            "https://www.infobae.com/feeds/rss/"
+            "https://www.infobae.com/arc/outboundfeeds/rss/"
         ],
         "structure": {
             "subtitle": "description",

@@ -13,6 +13,7 @@ class Standarizer {
       this.structure = Object.assign({}, this.structure, pageInfo.structure);
       this.pageUrls = pageInfo.urls;
       this.months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio','agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+      this.pageName = pageName;
     }
 
     async getNormalizedInfo(){
@@ -42,6 +43,7 @@ class Standarizer {
 			newItem['id'] = this.generatePostId(newItem['title']);
       newItem['link'] = item[this.structure['link']][0];
       newItem['date'] = item[this.structure['date']][0];
+      newItem['pageName'] = this.pageName;
       this.formatDate(newItem)
     }
 

@@ -1,16 +1,16 @@
-import { initializeFirebaseApp, uploadProcessedData } from "./lib/firebase.js"
+//import { initializeFirebaseApp, uploadProcessedData } from "./lib/firebase.js"
 
 const standarizers = [
-    //`${__dirname}/standarizers/pagina12Standarizer.js`,
-    //`${__dirname}/standarizers/clarinStandarizer.js`,
-    //`${__dirname}/standarizers/laNacionStandarizer.js`,
-    //`${__dirname}/standarizers/infobaeStandarizer.js`,
-    //`${__dirname}/standarizers/ambitoFinancieroStandarizer.js`,
-    //`${__dirname}/standarizers/perfilStandarizer.js`,
-    //`${__dirname}/standarizers/laPoliticaOnlineStandarizer.js`,
-    //`${__dirname}/standarizers/laIzquierdaDiarioStandarizer.js`,
-    //`${__dirname}/standarizers/elDiarioARStandarizer.js`,
-    //`${__dirname}/standarizers/elPaisStandarizer.js`,
+    `./standarizers/pagina12Standarizer.js`,
+    `./standarizers/clarinStandarizer.js`,
+    `./standarizers/laNacionStandarizer.js`,
+    `./standarizers/infobaeStandarizer.js`,
+    `./standarizers/ambitoFinancieroStandarizer.js`,
+    `./standarizers/perfilStandarizer.js`,
+    `./standarizers/laPoliticaOnlineStandarizer.js`,
+    `./standarizers/laIzquierdaDiarioStandarizer.js`,
+    `./standarizers/elDiarioARStandarizer.js`,
+    `./standarizers/elPaisStandarizer.js`,
 ];
 let data = []
 
@@ -18,18 +18,17 @@ async function getData(){
     standarizers.forEach(async element => {
         const Standarizer = require(element);
         const e = new Standarizer();
-        e.getNormalizedInfo()
-        //data = [].concat(...await e.getNormalizedInfo());
-        //console.log(data)
+        //e.getNormalizedInfo()
+        data = [].concat(...await e.getNormalizedInfo());
+        console.log(data)
     });
 }
 
 async function testUpload(){
     initializeFirebaseApp()
     await uploadProcessedData()
-    console.log("funca");
 }
 
-//getData()
+getData()
 
-testUpload()
+//testUpload()
